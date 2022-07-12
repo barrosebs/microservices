@@ -8,7 +8,7 @@ namespace Catalog.API.Data
         private readonly IMongoDatabase _database;
         public CatalogContext(IConfiguration configuration)
         {
-            var client = new MongoClient(configuration.GetValue<string>("DatabaseSettings:ConnectionsString"));
+            var client = new MongoClient(configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
             
             var database = client.GetDatabase(configuration.GetValue<string>("DatabaseSettings:DatabaseName"));
 
